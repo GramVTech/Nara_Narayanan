@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <supports-screens
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SastikJothidam"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".Generate_horoscope_general_remedies"
+            android:exported="false" />
+        <activity
+            android:name=".WebView_Report"
+            android:exported="false" />
+        <activity
+            android:name=".Special_Report_Plans"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope_student_report"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_Horoscope_Member_Report"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_special_report_Main_Menu"
+            android:exported="false" />
+        <activity
+            android:name=".Order_summary_Sub"
+            android:exported="false" />
+        <activity
+            android:name=".Order_summary"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".consultation_chat"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ViewAnswerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Chat_member"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Chat_Membership_Plan"
+            android:exported="false" />
+        <activity
+            android:name=".Chat_Menu_Sub"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope_Open"
+            android:exported="false" />
+        <activity
+            android:name=".Community_chat"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Graha_Planet_Strength"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope_Andaram"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_Horoscope_Bukti"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope_Dasa_Bukti"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope_panchangam"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope_birth_details"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope_planetary_positions"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_charts"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope_main_menu"
+            android:exported="false" />
+        <activity
+            android:name=".Consultation_Summary_Page"
+            android:exported="false" />
+        <activity
+            android:name=".Consultation_Slot"
+            android:exported="false" />
+        <activity
+            android:name=".E_store_Shipping_Page"
+            android:exported="false" />
+        <activity
+            android:name=".E_store_Product_Summary_page"
+            android:exported="false" />
+        <activity
+            android:name=".E_store_Product_list"
+            android:exported="false" />
+        <activity
+            android:name=".Live_classes"
+            android:exported="false" />
+        <activity
+            android:name=".Single_Video_Youtube_player"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:noHistory="true" />
+        <activity
+            android:name=".Astrology_Class_List_View"
+            android:exported="false" />
+        <activity
+            android:name=".Astrology_class_playlist"
+            android:exported="false" />
+        <activity
+            android:name=".Multi_Video_Youtube_Player_With_Comments"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="false"
+            android:noHistory="true" />
+        <activity
+            android:name=".Premium_video_plan_list"
+            android:exported="false" />
+        <activity
+            android:name=".Premium_video_according_to_playlist"
+            android:exported="false" />
+        <activity
+            android:name=".Premium_video_playlist"
+            android:exported="false" />
+        <activity
+            android:name=".Video_section_menu"
+            android:exported="false" />
+        <activity
+            android:name=".Generate_horoscope"
+            android:exported="false" />
+        <activity
+            android:name=".Register"
+            android:noHistory="true"
+            android:exported="false" />
+        <activity
+            android:name=".Main_menu"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:noHistory="true"
+            android:exported="false" />
+        <activity
+            android:name=".Logout"
+            android:exported="false" />
+        <activity
+            android:name=".Splash_screen"
+            android:noHistory="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_live_dkPPPZfajb6Xxa" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+
+
+
+</manifest>

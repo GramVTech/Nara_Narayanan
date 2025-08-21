@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="start"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:background="@android:color/transparent">
+
+    <!-- Received Image Content -->
+    <ImageView
+        android:id="@+id/receiver_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:background="@drawable/rounded_bg"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:maxWidth="200sp"
+        android:maxHeight="200sp"
+        android:layout_marginBottom="6dp"
+        android:src="@mipmap/account" />
+
+    <!-- Optional Caption or Message -->
+    <TextView
+        android:id="@+id/received_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_received_message"
+        android:padding="10dp"
+        android:fontFamily="@font/kanit_light"
+        android:textSize="16sp"
+        android:maxWidth="250dp"
+        android:visibility="visible"
+        android:text="Nice picture!" />
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/bungee_shade</item>
+        <item>@font/faster_one</item>
+        <item>@font/kanit</item>
+        <item>@font/kanit_light</item>
+        <item>@font/kanit_medium</item>
+        <item>@font/kanit_thin</item>
+        <item>@font/noto_sans_tamil_medium</item>
+        <item>@font/noto_serif_tamil_medium</item>
+        <item>@font/noto_serif_tamil_thin</item>
+        <item>@font/zen_dots</item>
+    </array>
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="end"
+    android:padding="8dp"
+    android:layout_margin="8dp"
+    android:background="@android:color/transparent">
+
+    <!-- Sent Image -->
+    <ImageView
+        android:id="@+id/sender_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:maxWidth="200sp"
+        android:maxHeight="200sp"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/rounded_bg"
+        android:clipToOutline="true"
+        android:src="@mipmap/account" />
+
+    <!-- Optional Caption -->
+    <TextView
+        android:id="@+id/sent_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_sent_message"
+        android:padding="10dp"
+        android:fontFamily="@font/kanit_light"
+        android:textSize="16sp"
+        android:maxWidth="250dp"
+        android:visibility="visible"
+        android:text="Here's the document" />
+</LinearLayout>

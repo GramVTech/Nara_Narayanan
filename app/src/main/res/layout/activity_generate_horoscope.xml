@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Generate_horoscope">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/logo" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="6sp"
+            app:cardElevation="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView4">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/kanit"
+                    android:text="WELCOME TO SASTIK ASTRO SOFTWARE"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/editTextText"
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawableLeft="@drawable/baseline_person_4_24"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:fontFamily="@font/kanit_light"
+                    android:hint="Full Name"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingLeft="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/google_sign_in_button" />
+
+                <EditText
+                    android:id="@+id/editTextTextdob"
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawableLeft="@drawable/baseline_date_range_24"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/kanit_light"
+                    android:hint="DATE OF BIRTH"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingLeft="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextText" />
+
+                <EditText
+                    android:id="@+id/editTextTexttime"
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawableLeft="@drawable/baseline_access_time_24"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:fontFamily="@font/kanit_light"
+                    android:hint="TIME OF BIRTH"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingLeft="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextdob" />
+
+                <EditText
+                    android:id="@+id/editTextTextplace"
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawableLeft="@drawable/baseline_my_location_24"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:fontFamily="@font/kanit_light"
+                    android:hint="PLACE OF BIRTH"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingLeft="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/button"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTexttime" />
+
+                <EditText
+                    android:id="@+id/country"
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawableLeft="@drawable/baseline_location_on_24"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:fontFamily="@font/kanit_light"
+                    android:hint="COUNTRY"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:paddingLeft="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTextplace" />
+
+
+                <EditText
+                    android:id="@+id/lat"
+                    android:layout_width="100sp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:fontFamily="@font/kanit_light"
+                    android:gravity="center"
+                    android:hint="LAT"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/placeholdercolour"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/country" />
+
+                <EditText
+                    android:id="@+id/lon"
+                    android:layout_width="100sp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:fontFamily="@font/kanit_light"
+                    android:gravity="center"
+                    android:hint="LON"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/placeholdercolour"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/lat"
+                    app:layout_constraintTop_toBottomOf="@+id/country" />
+
+                <EditText
+                    android:id="@+id/tz"
+                    android:layout_width="100sp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/edittext_bg"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:fontFamily="@font/kanit_light"
+                    android:gravity="center"
+                    android:hint="TZ"
+                    android:imeOptions="actionNext"
+                    android:inputType="text"
+                    android:textColor="@color/placeholdercolour"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toEndOf="@+id/lon"
+                    app:layout_constraintTop_toBottomOf="@+id/country" />
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/google_sign_in_button"
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="@color/my_dark_primary"
+                    app:cardCornerRadius="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="50sp"
+                            android:layout_height="50sp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:paddingLeft="24sp"
+                            android:src="@mipmap/folder"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kanit"
+                            android:text="OPEN SAVED HOROSCOPE"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="0dp"
+                    android:layout_height="50sp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardBackgroundColor="@color/my_light_primary"
+                    app:cardCornerRadius="30sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lon">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <ImageView
+                            android:id="@+id/imageView22"
+                            android:layout_width="50sp"
+                            android:layout_height="50sp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:paddingLeft="24sp"
+                            android:src="@mipmap/chiromancy"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/textView22"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/kanit"
+                            android:text="GENERATE HOROSCOPE"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="SEARCH"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextTexttime" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
