@@ -26,7 +26,9 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -50,8 +52,6 @@ public class Profile extends AppCompatActivity {
 
     ImageView ProfileImage;
     TextView Name, Mobile, Mail, Address;
-    TextView video_membership,chat_membership;
-    TextView Profession,DOB,Time,Place,Gender;
 
     StringBuffer sb = new StringBuffer();
     String json_url1 = Url_interface.url+"profile.php";
@@ -80,6 +80,18 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         intialise();
+
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+        WindowInsetsControllerCompat insetsController =
+                new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
+
+        // Hide both status bar and navigation bar
+        insetsController.hide(WindowInsetsCompat.Type.statusBars() | WindowInsetsCompat.Type.navigationBars());
+
+        // Optional: Make them re-appear with swipe
+        insetsController.setSystemBarsBehavior(
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
         progressDialog.show();
         new backgroundworker().execute();
 
@@ -170,18 +182,7 @@ public class Profile extends AppCompatActivity {
                 Bitmap initialsBitmap = getInitialBitmap(firstLetter, 200, bgColor, textColor);
                 ProfileImage.setImageBitmap(initialsBitmap);
 
-                if(jsonObject1.getString("profession").equals("")||jsonObject1.getString("profession").equals("0")){
-                    showUserInfoDialog();
-                }else{
-                    Profession.setText(jsonObject1.getString("profession"));
-                    DOB.setText(jsonObject1.getString("dob"));
-                    Time.setText(jsonObject1.getString("tob"));
-                    Place.setText(jsonObject1.getString("pob"));
-                    Gender.setText(jsonObject1.getString("gender"));
-                }
 
-                video_membership.setText(jsonObject1.getString("premium_video_plans"));
-                chat_membership.setText(jsonObject1.getString("member_chat_plans"));
 
 
 
@@ -367,13 +368,7 @@ public class Profile extends AppCompatActivity {
         Mobile = findViewById(R.id.textView109);
         Mail = findViewById(R.id.textView111);
         Address = findViewById(R.id.textView114);
-        video_membership = findViewById(R.id.textView1092);
-        chat_membership = findViewById(R.id.textView1072);
-        Profession = findViewById(R.id.textView10923);
-        DOB = findViewById(R.id.textView10723);
-        Time = findViewById(R.id.textView116);
-        Place = findViewById(R.id.textView118);
-        Gender = findViewById(R.id.textView120);
+
 
         progressDialog = new ProgressDialog(Profile.this);
         progressDialog.setMessage("Please Wait...!!!");

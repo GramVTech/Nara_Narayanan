@@ -1,6 +1,9 @@
 package astro.sastikjothidam;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -91,6 +94,18 @@ public class Premium_video_plan_list extends AppCompatActivity implements Paymen
         setContentView(R.layout.activity_premium_video_plan_list);
 
         intialise();
+
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+        WindowInsetsControllerCompat insetsController =
+                new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
+
+        // Hide both status bar and navigation bar
+        insetsController.hide(WindowInsetsCompat.Type.statusBars() | WindowInsetsCompat.Type.navigationBars());
+
+        // Optional: Make them re-appear with swipe
+        insetsController.setSystemBarsBehavior(
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

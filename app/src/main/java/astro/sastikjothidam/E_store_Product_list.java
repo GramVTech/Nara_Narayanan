@@ -2,6 +2,9 @@ package astro.sastikjothidam;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.core.view.WindowCompat;
+import androidx.core.view.WindowInsetsCompat;
+import androidx.core.view.WindowInsetsControllerCompat;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -98,6 +101,18 @@ public class E_store_Product_list extends AppCompatActivity {
         setContentView(R.layout.activity_estore_product_list);
 
         intialise();
+
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
+
+        WindowInsetsControllerCompat insetsController =
+                new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
+
+        // Hide both status bar and navigation bar
+        insetsController.hide(WindowInsetsCompat.Type.statusBars() | WindowInsetsCompat.Type.navigationBars());
+
+        // Optional: Make them re-appear with swipe
+        insetsController.setSystemBarsBehavior(
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
 
         calc();
 
@@ -408,10 +423,6 @@ public class E_store_Product_list extends AppCompatActivity {
 
             TextView product_desc = view.findViewById(R.id.textView26);
 
-            RatingBar ratingBar = view.findViewById(R.id.ratingBar);
-
-            TextView rating = view.findViewById(R.id.textView30);
-
             TextView adder = view.findViewById(R.id.textView33);
 
             CardView qtyer = view.findViewById(R.id.qtyer);
@@ -502,8 +513,6 @@ public class E_store_Product_list extends AppCompatActivity {
                     product_offer.setText(Lproduct_offer.get(i) + "% OFF");
                     product_price.setPaintFlags(product_price.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     product_desc.setText(Lproduct_description.get(i));
-                    ratingBar.setRating(3.5F);
-                    rating.setText(String.valueOf( 3.5));
 
                 } catch (Exception e) {
                     Log.e("AQWERRTT", "" + e);
