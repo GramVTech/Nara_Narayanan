@@ -2,9 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="my_light_primary">#004D40</color>
-    <color name="my_dark_primary">#004D40</color>
-    <color name="red">#FF0000</color>
+    <color name="my_light_primary">#a2261a</color>
+    <color name="my_dark_primary">#a2261a</color>
+    <color name="red">#a2261a</color>
     <color name="brown">#7C3433</color>
     <color name="blue">#0000FF</color>
     <color name="green">#64DD17</color>
@@ -13,8 +13,8 @@
     <color name="yellow">#f1e91a</color>
     <color name="dark_yellow">#917D23</color>
     <color name="orange">#FB8C00</color>
-    <color name="dark_green">#FDD835</color>
+    <color name="dark_green">#004D40</color>
     <color name="transparent">#00F7D8BA</color>
     <color name="light_yellow">#FFF196</color>
-    <color name="sandal">#feffef</color>
+    <color name="sandal">#f5e3d0</color>
 </resources>

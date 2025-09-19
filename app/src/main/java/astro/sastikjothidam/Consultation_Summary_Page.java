@@ -109,7 +109,7 @@ public class Consultation_Summary_Page extends AppCompatActivity implements Paym
 
         progressDialog.show();
         new backgroundworker().execute();
-        time_date_booked.setText(intent.getStringExtra("dater")+" : "+intent.getStringExtra("timer"));
+        time_date_booked.setText(" -:- ");
 
         consultation_mode_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -136,8 +136,8 @@ public class Consultation_Summary_Page extends AppCompatActivity implements Paym
             public void onClick(View view) {
                 sname = name.getText().toString();
                 smobile = mobile.getText().toString();
-                stime = intent.getStringExtra("timer").trim();
-                sdate = intent.getStringExtra("dater").trim();
+                stime = "-";
+                sdate = "-";
                 progressDialog.show();
                 new backgroundworker2().execute();
             }

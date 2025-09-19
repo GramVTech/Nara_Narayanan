@@ -10,6 +10,7 @@
         <item>@font/noto_sans_tamil_medium</item>
         <item>@font/noto_serif_tamil_medium</item>
         <item>@font/noto_serif_tamil_thin</item>
+        <item>@font/roboto_medium</item>
         <item>@font/zen_dots</item>
     </array>
 </resources>

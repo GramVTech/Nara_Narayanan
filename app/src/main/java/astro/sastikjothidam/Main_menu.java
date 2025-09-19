@@ -81,17 +81,7 @@ public class Main_menu extends AppCompatActivity implements BaseSliderView.OnSli
         setContentView(R.layout.activity_main_menu);
 
 
-        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
-        WindowInsetsControllerCompat insetsController =
-                new WindowInsetsControllerCompat(getWindow(), getWindow().getDecorView());
-
-        // Hide both status bar and navigation bar
-        insetsController.hide(WindowInsetsCompat.Type.statusBars() | WindowInsetsCompat.Type.navigationBars());
-
-        // Optional: Make them re-appear with swipe
-        insetsController.setSystemBarsBehavior(
-                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
 
         intialise();
 
@@ -118,21 +108,15 @@ public class Main_menu extends AppCompatActivity implements BaseSliderView.OnSli
             }
         });
 
-        findViewById(R.id.consultation).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.horoscope).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Main_menu.this, Consultation_Slot.class);
+                Intent intent = new Intent(Main_menu.this, Consultation_Summary_Page.class);
                 startActivity(intent);
             }
         });
 
-        findViewById(R.id.chat).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Main_menu.this, Chat_Menu_Sub.class);
-                startActivity(intent);
-            }
-        });
+
 
         findViewById(R.id.profile).setOnClickListener(new View.OnClickListener() {
             @Override
