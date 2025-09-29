@@ -34,6 +34,9 @@
             android:name=".Generate_horoscope_general_remedies"
             android:exported="false" />
         <activity
+            android:name=".Pdf_Player"
+            android:exported="false" />
+        <activity
             android:name=".WebView_Report"
             android:exported="false" />
         <activity

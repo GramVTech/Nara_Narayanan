@@ -1,5 +1,8 @@
 package astro.sastikjothidam;
 
+import static android.view.View.GONE;
+import static android.view.View.VISIBLE;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -73,6 +76,7 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
     List<String> Lclass_price = new ArrayList<>();
     List<String> Lclass_image_link = new ArrayList<>();
     List<String> Lclass_video_link = new ArrayList<>();
+    List<String> Lclass_video_link2 = new ArrayList<>();
     List<String> Lclass_num_of_videos = new ArrayList<>();
     List<String> Lclass_payment_status = new ArrayList<>();
     CustomAdapter customAdapter;
@@ -93,6 +97,10 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
     StringBuffer sb3 = new StringBuffer();
     String json_url3 = Url_interface.url+"updation_of_payment_class.php";
     String json_string3;
+
+    Intent book_intent;
+
+    String type="";
 
     @Override
     protected void attachBaseContext(Context newBase) {
@@ -144,6 +152,18 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
             }
         });
 
+        try{
+            if(book_intent.getStringExtra("type").equals("pdf")){
+                json_url1 = Url_interface.url+"Astrology_class_playlist2.php";
+                json_url2 = Url_interface.url+"Astrology_class_playlist_with_filter2.php";
+                json_url22 = Url_interface.url+"generation_of_order_id_class3.php";
+                json_url3 = Url_interface.url+"updation_of_payment_class3.php";
+                type="pdf";
+            }
+        }catch (Exception e){
+
+        }
+
 
     }
 
@@ -165,6 +185,7 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
                 Lclass_price.clear();
                 Lclass_image_link.clear();
                 Lclass_video_link.clear();
+                Lclass_video_link2.clear();
                 Lclass_num_of_videos.clear();
                 Lclass_payment_status.clear();
 
@@ -220,6 +241,9 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
                     Lclass_price.add(jsonObject1.getString("class_price"));
                     Lclass_image_link.add(jsonObject1.getString("class_image"));
                     Lclass_video_link.add(jsonObject1.getString("class_video_preview_link"));
+                    if(jsonObject1.has("class_video_preview_link1")){
+                        Lclass_video_link2.add(jsonObject1.getString("class_video_preview_link1"));
+                    }
                     Lclass_num_of_videos.add(jsonObject1.getString("num_of_videos"));
                     Lclass_payment_status.add(jsonObject1.getString("payment_status"));
                     count++;
@@ -256,6 +280,7 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
                 Lclass_price.clear();
                 Lclass_image_link.clear();
                 Lclass_video_link.clear();
+                Lclass_video_link2.clear();
                 Lclass_num_of_videos.clear();
                 Lclass_payment_status.clear();
 
@@ -312,6 +337,9 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
                     Lclass_price.add(jsonObject1.getString("class_price"));
                     Lclass_image_link.add(jsonObject1.getString("class_image"));
                     Lclass_video_link.add(jsonObject1.getString("class_video_preview_link"));
+                    if(jsonObject1.has("class_video_preview_link1")){
+                        Lclass_video_link2.add(jsonObject1.getString("class_video_preview_link1"));
+                    }
                     Lclass_num_of_videos.add(jsonObject1.getString("num_of_videos"));
                     Lclass_payment_status.add(jsonObject1.getString("payment_status"));
                     count++;
@@ -362,7 +390,9 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
 
             view = getLayoutInflater().inflate(R.layout.custom_layout_astrology_class_playlist, null);
 
+            TextView class_name_txt = view.findViewById(R.id.textView19);
             TextView class_name = view.findViewById(R.id.textView20);
+
             TextView class_vieos = view.findViewById(R.id.textView1200);
             ImageView class_image = view.findViewById(R.id.imageView7);
             ImageView class_video_link = view.findViewById(R.id.imageView13);
@@ -389,19 +419,26 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
 
 
             if(Lclass_payment_status.get(i).equals("Success")){
-                pay_now_button.setText("VIEW ALL CLASSES");
+                pay_now_button.setText("VIEW");
                 pay_now_button.setBackgroundColor(pay_now_button.getContext().getResources().getColor(R.color.dark_green));
             }else{
                 pay_now_button.setText("PAY NOW - "+Lclass_price.get(i)+" ₹");
             }
 
-            if(pay_now_button.getText().toString().equals("VIEW ALL CLASSES")){
+            if(pay_now_button.getText().toString().equals("VIEW")){
                 pay_now_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Intent intent = new Intent(Astrology_class_playlist.this,Astrology_Class_List_View.class);
-                        intent.putExtra("class_category_id",Lclass_id.get(i));
-                        startActivity(intent);
+                        if(type.equals("pdf")){
+                            Intent intent = new Intent(Astrology_class_playlist.this, Pdf_Player.class);
+                            intent.putExtra("url", Lclass_video_link.get(i));
+                            intent.putExtra("type", type);
+                            startActivity(intent);
+                        }else {
+                            Intent intent = new Intent(Astrology_class_playlist.this, Astrology_Class_List_View.class);
+                            intent.putExtra("class_category_id", Lclass_id.get(i));
+                            startActivity(intent);
+                        }
                     }
                 });
             }else{
@@ -415,6 +452,16 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
                         new backgroundworker22().execute();
                     }
                 });
+            }
+
+            if(type.equals("pdf")) {
+                class_name_txt.setText("BOOK TITLE");
+                view.findViewById(R.id.textView1199).setVisibility(GONE);
+                view.findViewById(R.id.textView1200).setVisibility(GONE);
+                view.findViewById(R.id.textView11999).setVisibility(GONE);
+                view.findViewById(R.id.imageView13).setVisibility(GONE);
+                view.findViewById(R.id.divider1000).setVisibility(GONE);
+                view.findViewById(R.id.divider10).setVisibility(VISIBLE);
             }
 
 
@@ -439,6 +486,8 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
         listView.setDivider(null);
 
         autocompletetextView=(AutoCompleteTextView)findViewById(R.id.editTextText);
+
+        book_intent = getIntent();
     }
 
     @Override

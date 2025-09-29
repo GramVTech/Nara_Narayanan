@@ -52,8 +52,8 @@ dependencies {
 
     implementation("com.squareup.picasso:picasso:2.4.0")
 
-    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.0.0")
-    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.28")
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.2")
+    implementation("com.pierfrancescosoffritti.androidyoutubeplayer:chromecast-sender:0.31")
 
     implementation("com.google.android.play:app-update:2.1.0")
 
@@ -63,6 +63,8 @@ dependencies {
     implementation("commons-codec:commons-codec:1.9")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    implementation ("com.github.mhiew:android-pdf-viewer:3.2.0-beta.3")
 
     implementation ("androidx.core:core-ktx:1.12.0")
 

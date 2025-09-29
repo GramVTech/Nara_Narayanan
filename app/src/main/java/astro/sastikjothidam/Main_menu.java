@@ -116,6 +116,14 @@ public class Main_menu extends AppCompatActivity implements BaseSliderView.OnSli
             }
         });
 
+        findViewById(R.id.books).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Main_menu.this, Astrology_class_playlist.class);
+                intent.putExtra("type","pdf");
+                startActivity(intent);
+            }
+        });
 
 
         findViewById(R.id.profile).setOnClickListener(new View.OnClickListener() {
