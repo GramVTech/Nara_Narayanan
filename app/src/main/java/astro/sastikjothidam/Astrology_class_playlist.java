@@ -129,8 +129,7 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
         insetsController.setSystemBarsBehavior(
                 WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE);
 
-        progressDialog.show();
-        new backgroundworker().execute();
+
 
         autocompletetextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -159,10 +158,19 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
                 json_url22 = Url_interface.url+"generation_of_order_id_class3.php";
                 json_url3 = Url_interface.url+"updation_of_payment_class3.php";
                 type="pdf";
+                progressDialog.show();
+                new backgroundworker().execute();
             }
         }catch (Exception e){
-
+            json_url1 = Url_interface.url+"Astrology_class_playlist.php";
+            json_url2 = Url_interface.url+"Astrology_class_playlist_with_filter.php";
+            json_url22 = Url_interface.url+"generation_of_order_id_class.php";
+            json_url3 = Url_interface.url+"updation_of_payment_class.php";
+            type="pdf";
+            progressDialog.show();
+            new backgroundworker().execute();
         }
+
 
 
     }
@@ -392,7 +400,6 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
 
             TextView class_name_txt = view.findViewById(R.id.textView19);
             TextView class_name = view.findViewById(R.id.textView20);
-
             TextView class_vieos = view.findViewById(R.id.textView1200);
             ImageView class_image = view.findViewById(R.id.imageView7);
             ImageView class_video_link = view.findViewById(R.id.imageView13);
@@ -461,7 +468,7 @@ public class Astrology_class_playlist extends AppCompatActivity implements Payme
                 view.findViewById(R.id.textView11999).setVisibility(GONE);
                 view.findViewById(R.id.imageView13).setVisibility(GONE);
                 view.findViewById(R.id.divider1000).setVisibility(GONE);
-                view.findViewById(R.id.divider10).setVisibility(VISIBLE);
+                view.findViewById(R.id.divider10).setVisibility(GONE);
             }
 
 
